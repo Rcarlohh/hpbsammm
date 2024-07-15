@@ -1,0 +1,80 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #f7f0ff; /* Fondo lila claro */
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+.balloon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 20px;
+    opacity: 0;
+    animation: fadeIn 2s forwards;
+}
+
+.balloon {
+    font-size: 2em;
+    margin: 5px;
+    color: #a64ca6; /* Color lila predominante */
+    animation: float 6s infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+.surprise-button {
+    background-color: #a64ca6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.surprise-button:hover {
+    background-color: #8a3e8a;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 20px auto;
+    opacity: 0;
+    transform: translateY(50px);
+    animation: fadeInUp 2s forwards;
+}
+
+.hidden {
+    display: none;
+}
+
+@keyframes fadeIn {
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Media Query para dispositivos móviles */
+@media (max-width: 600px) {
+    .card {
+        padding: 10px;
+    }
+}
